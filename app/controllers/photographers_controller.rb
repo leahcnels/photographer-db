@@ -16,6 +16,17 @@ class PhotographersController < ApplicationController
       render :new
     end
   end
+  def edit
+    @photographer = Photographer.find(params[:id])
+  end
+  def update
+    @photographer = Photographer.find(params[:id])
+    if @photographer.update(photographer_params)
+      redirect_to photographer_path(@photographer)
+    else
+      render :edit
+    end
+  end
 
 private
   def photographer_params
