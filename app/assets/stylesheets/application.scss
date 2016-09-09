@@ -17,6 +17,10 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+body {
+  font-family: 'Capriola', sans-serif;
+}
+
 #index-photo {
   padding: 0;
   img {
