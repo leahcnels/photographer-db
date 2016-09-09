@@ -1,3 +1,10 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root :to => 'photographers#index'
+
+  resources :photographers do
+    resources :images
+  end
+  resources :categories do
+    resources :photographers, :only => [:index]
+  end
 end

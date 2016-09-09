@@ -1,0 +1,12 @@
+<%= @photographer.name %>
+
+<% if @photographer.images.any? %>
+  <% @photographer.images.each do |image| %>
+    <%= image_tag image.img_file_file_name %>
+    <!-- check syntax -->
+  <% end %>
+<% else %>
+  <p>no images for this photographer yet</p>
+<% end %>
+
+<p><%= link_to "return to photographers", photographers_path %></p> 

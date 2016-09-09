@@ -1,0 +1,9 @@
+<h1>Hire A Photographer</h1>
+
+<% if @photographers.any? %>
+  <% @photographers.each do |photographer| %>
+    <p><%= link_to photographer.name, photographer_path(photographer) %></p>
+  <% end %>
+<% else %>
+  <p>no photographers yet</p>
+<% end %>
