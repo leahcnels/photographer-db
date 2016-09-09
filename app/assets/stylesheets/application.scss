@@ -17,7 +17,14 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
-// .photo_tile {
-//   height: 600px;
-//   width: 600px;
-// }
+#index-photo {
+  padding: 0;
+  img {
+    width: 100%;
+  }
+}
+
+#index-rightbar {
+  padding-top: 20%;
+  padding-bottom: 15%;
+}

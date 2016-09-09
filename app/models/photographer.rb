@@ -1,5 +1,5 @@
 class Photographer < ActiveRecord::Base
-  has_many :images
+  has_many :images, dependent: :destroy
   has_and_belongs_to_many :categories
 
   validates :name, :presence => true

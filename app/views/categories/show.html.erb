@@ -1,0 +1,11 @@
+<h3><%= @category.name %></h3>
+
+<% if @category.photographers.any? %>
+  <ul>
+    <%= @category.photographers.each do |photographer| %>
+      <li><%= link_to photographer.name, photographer_path(photographer) %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>this category has no photographers yet</p>
+<% end %>

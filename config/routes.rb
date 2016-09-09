@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root :to => 'photographers#index'
+  root :to => "application#index"
 
   resources :photographers do
     resources :images
