@@ -2,10 +2,13 @@
 
 <% if @photographers.any? %>
   <% @photographers.each do |photographer| %>
-    <p><%= link_to photographer.name, photographer_path(photographer) %></p>
+    <%= link_to photographer.name, photographer_path(photographer) %>
+      (<% photographer.categories.each do |category| %>
+        <%= link_to category.name, category_path(category) %>
+      <% end %>)
   <% end %>
 <% else %>
   <p>no photographers yet</p>
 <% end %>
 
-<%= link_to "new photographer", new_photographer_path %>
+<p><%= link_to "new photographer", new_photographer_path %></p>
