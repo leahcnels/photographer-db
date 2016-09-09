@@ -1,1 +1,3 @@
-# photographerdb
+# _PhotographerDB_
+
+#### By **Leah Nelson**

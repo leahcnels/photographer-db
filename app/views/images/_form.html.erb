@@ -1,0 +1,6 @@
+<%= render('layouts/errors', :object => @image) %>
+
+<%= form_for [@photographer, @image], url: photographer_images_path(@photographer) do |form| %>
+  <%= form.file_field :img_file %>
+  <%= form.submit %>
+<% end %>

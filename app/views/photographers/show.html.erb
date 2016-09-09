@@ -11,13 +11,15 @@
 <h4>Images:</h4>
 <% if @photographer.images.any? %>
   <% @photographer.images.each do |image| %>
-    <%= image_tag image.img_file_file_name %>
-    <!-- check syntax -->
+    <%= link_to photographer_image_path(@photographer, image) do %>
+      <%= image_tag image.img_file.url(:default) %>
+    <% end %>
   <% end %>
 <% else %>
   <p>no images for this photographer yet</p>
 <% end %>
 
+<p><%= link_to "upload photos", new_photographer_image_path(@photographer) %></p>
 <hr>
 
 <p><%= link_to "edit", edit_photographer_path(@photographer) %></p>
