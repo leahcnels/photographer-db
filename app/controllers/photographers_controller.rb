@@ -27,6 +27,11 @@ class PhotographersController < ApplicationController
       render :edit
     end
   end
+  def destroy
+    @photographer = Photographer.find(params[:id])
+    @photographer.destroy
+    redirect_to photographers_path
+  end
 
 private
   def photographer_params

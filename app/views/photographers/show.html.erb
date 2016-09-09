@@ -1,9 +1,14 @@
 <h3><%= @photographer.name %></h3>
+<h5><%= @photographer.address %></h5>
+<h5><%= @photographer.phone %> | <%= @photographer.email %></h5>
+<h4>Categories:</h4>
+<ul>
+  <% @photographer.categories.each do |category| %>
+    <li><%= category.name %></li>
+  <% end %>
+</ul>
 
-<% @photographer.categories.each do |category| %>
-  <li><%= category.name %></li>
-<% end %>
-
+<h4>Images:</h4>
 <% if @photographer.images.any? %>
   <% @photographer.images.each do |image| %>
     <%= image_tag image.img_file_file_name %>
@@ -16,4 +21,6 @@
 <hr>
 
 <p><%= link_to "edit", edit_photographer_path(@photographer) %></p>
+<p><%= link_to "delete", photographer_path(@photographer),
+                         :data => {:method => "delete"} %></p>
 <p><%= link_to "return to photographers", photographers_path %></p>
