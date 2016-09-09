@@ -4,4 +4,6 @@ class Photographer < ActiveRecord::Base
 
   validates :name, :presence => true
   validates :address, :presence => true
+  validates :phone, :presence => true
+  validates :email, :presence => true
 end

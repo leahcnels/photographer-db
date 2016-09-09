@@ -1,0 +1,24 @@
+<%= render "layouts/errors", :object => @photographer %>
+
+<%= form_for @photographer do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.label :address %>
+  <%= f.text_field :address %>
+  <br>
+  <%= f.label :phone %>
+  <%= f.text_field :phone %>
+  <br>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+  <br>
+  <%= f.label :categories %>
+  <%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |b| %>
+    <div class="collection-check-box">
+      <%= b.check_box %>
+      <%= b.label %>
+    </div>
+  <% end %>
+  <%= f.submit  %>
+<% end %>

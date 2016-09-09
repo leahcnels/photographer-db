@@ -1,4 +1,8 @@
-<%= @photographer.name %>
+<h3><%= @photographer.name %></h3>
+
+<% @photographer.categories.each do |category| %>
+  <li><%= category.name %></li>
+<% end %>
 
 <% if @photographer.images.any? %>
   <% @photographer.images.each do |image| %>
@@ -9,4 +13,4 @@
   <p>no images for this photographer yet</p>
 <% end %>
 
-<p><%= link_to "return to photographers", photographers_path %></p> 
+<p><%= link_to "return to photographers", photographers_path %></p>
