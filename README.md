@@ -8,16 +8,17 @@ Find and hire a local freelance photographer for your special event or simple he
 
 ## Current Capabilities
 
+* User authentication
+* View, update, or delete user.
+* User can also be or become a photographer.
 * View seeded list of categories and its photographers, and vice versa
-* Add a photographer to the database.
-* Update or delete photographer.
-* Upload image from computer and assign to photographer.
-* View or delete individual image.
+* Upload image from computer and assign to user.
+* View or delete images.
 
 ## Future Objectives
 
-* Client can request a photoshoot; photographers can bid for the job.
-* User authentication.
+* User can request a photoshoot via posting board.
+* Users can review other users.
 * Utilize Google Maps API to geolocate user and populate map with nearby photographers.
 * Messaging system between users.
 
@@ -32,7 +33,7 @@ Find and hire a local freelance photographer for your special event or simple he
 * `git clone <repository-url>` this repository
 * change into the new directory
 * `rake:db:migrate db:test:prepare`
-* `rake db:seed` (if seeds do not already appear)
+* `rake db:seed` (to seed categories)
 * `rails s`
 * [http://localhost:3000](http://localhost:3000)
 
