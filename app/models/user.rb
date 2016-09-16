@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   validates_confirmation_of :password
   before_save :encrypt_password
   has_many :images, dependent: :destroy
+  has_many :postings, dependent: :destroy
   has_and_belongs_to_many :categories
   validates :name, :presence => true
   validates :password, :presence => true

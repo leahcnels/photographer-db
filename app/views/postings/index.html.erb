@@ -1,0 +1,10 @@
+<h1>Postings</h1>
+
+<% if @postings %>
+  <% @postings.each do |posting| %>
+    <%= link_to posting.title, posting_path(posting) %>
+  <% end %>
+<% end %>
+
+<hr>
+<%= link_to "New Posting", new_posting_path %>

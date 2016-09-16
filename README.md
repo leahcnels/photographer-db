@@ -14,10 +14,12 @@ Find and hire a local freelance photographer for your special event or simple he
 * View seeded list of categories and its photographers, and vice versa
 * Upload image from computer and assign to user.
 * View or delete images.
+* User can create a posting
 
 ## Future Objectives
 
-* User can request a photoshoot via posting board.
+* Users can comment on postings.
+* CRUD and specs for postings.
 * Users can review other users.
 * Utilize Google Maps API to geolocate user and populate map with nearby photographers.
 * Messaging system between users.
