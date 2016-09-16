@@ -1,6 +1,6 @@
-# _PhotographerDB_
+# PhotographerDB
 
-#### By **Leah Nelson**
+#### By Leah Nelson
 
 ## Description
 
