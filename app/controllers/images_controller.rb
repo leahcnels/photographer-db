@@ -3,15 +3,15 @@ class ImagesController < ApplicationController
     @image = Image.find(params[:id])
   end
   def new
-    @photographer = Photographer.find(params[:photographer_id])
-    @image = @photographer.images.new
+    @user = User.find(params[:user_id])
+    @image = Image.new
   end
   def create
-    @photographer = Photographer.find(params[:photographer_id])
-    @image = @photographer.images.new(image_params)
+    @user = User.find(params[:user_id])
+    @image = @user.images.new(image_params)
     if @image.save
       flash[:success] = "Image uploaded!"
-      redirect_to photographer_path(@photographer)
+      redirect_to user_path(@user)
     else
       flash[:alert] = "Upload unsuccessful, please try again!"
       render :new
@@ -21,7 +21,7 @@ class ImagesController < ApplicationController
     @image = Image.find(params[:id])
     @image.destroy
     flash[:error] = "Image deleted!"
-    redirect_to photographer_path(@image.photographer)
+    redirect_to user_path(@image.user)
   end
 private
   def image_params

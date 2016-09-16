@@ -1,9 +1,9 @@
 <h3><%= @category.name %></h3>
 
-<% if @category.photographers.any? %>
+<% if @category.users.any? %>
   <ul>
-    <%= @category.photographers.each do |photographer| %>
-      <li><%= link_to photographer.name, photographer_path(photographer) %></li>
+    <% @category.users.each do |user| %>
+      <li><%= link_to user.name, user_path(user) %></li>
     <% end %>
   </ul>
 <% else %>

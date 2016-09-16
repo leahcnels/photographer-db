@@ -1,4 +1,4 @@
 <%= image_tag @image.img_file.url %>
 
-<p><%= link_to "delete image", photographer_image_path(@image.photographer, @image),
+<p><%= link_to "delete image", user_image_path(@image.user, @image),
                             :data => {:method => "delete"} %></p>

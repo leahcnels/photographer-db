@@ -1,0 +1,30 @@
+<h3><%= @user.name %></h3>
+<h5><%= @user.address %></h5>
+<h5><%= @user.phone %> | <%= @user.email %></h5>
+<h4>Categories:</h4>
+<ul>
+  <% @user.categories.each do |category| %>
+    <li><%= link_to category.name, category_path(category) %></li>
+  <% end %>
+</ul>
+
+<h4>Images:</h4>
+<% if @user.images.any? %>
+  <% @user.images.each do |image| %>
+    <%= link_to user_image_path(@user, image) do %>
+      <%= image_tag image.img_file.url(:default) %>
+    <% end %>
+  <% end %>
+<% else %>
+  <p>no images for this photographer yet</p>
+<% end %>
+
+<p><%= link_to "upload photos", new_user_image_path(@user) %></p>
+<hr>
+
+<% if session[:user_id] === @user.id %>
+  <p><%= link_to "edit", edit_user_path(@user) %></p>
+  <p><%= link_to "delete", user_path(@user),
+                         :data => {:method => "delete"} %></p>
+<% end %>
+<p><%= link_to "return to photographers", users_path %></p>

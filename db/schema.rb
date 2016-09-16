@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160916160003) do
+ActiveRecord::Schema.define(version: 20160916203434) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,11 +19,11 @@ ActiveRecord::Schema.define(version: 20160916160003) do
     t.string "name"
   end
 
-  create_table "categories_photographers", id: false, force: :cascade do |t|
+  create_table "categories_users", id: false, force: :cascade do |t|
     t.integer "category_id"
-    t.integer "photographer_id"
-    t.index ["category_id"], name: "index_categories_photographers_on_category_id", using: :btree
-    t.index ["photographer_id"], name: "index_categories_photographers_on_photographer_id", using: :btree
+    t.integer "user_id"
+    t.index ["category_id"], name: "index_categories_users_on_category_id", using: :btree
+    t.index ["user_id"], name: "index_categories_users_on_user_id", using: :btree
   end
 
   create_table "images", force: :cascade do |t|
@@ -31,16 +31,7 @@ ActiveRecord::Schema.define(version: 20160916160003) do
     t.string   "img_file_content_type"
     t.integer  "img_file_file_size"
     t.datetime "img_file_updated_at"
-    t.integer  "photographer_id"
-  end
-
-  create_table "photographers", force: :cascade do |t|
-    t.string   "name"
-    t.string   "address"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "phone"
-    t.string   "email"
+    t.integer  "user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -51,6 +42,8 @@ ActiveRecord::Schema.define(version: 20160916160003) do
     t.boolean  "photographer"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.string   "phone"
+    t.string   "address"
   end
 
 end
