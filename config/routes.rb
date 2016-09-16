@@ -7,4 +7,9 @@ Rails.application.routes.draw do
   resources :categories do
     resources :photographers, :only => [:index]
   end
+
+  resources :users
+  get "/log-in" => "sessions#new"
+  post "/log-in" => "sessions#create"
+  get "/log-out" => "sessions#destroy", as: :log_out
 end

@@ -17,6 +17,16 @@
       </div>
     <% end %>
 
+    <% if session[:user_id] %>
+      Logged in as: <%= User.find(session[:user_id]).email %>
+      <%= link_to "Log Out", log_out_path %>
+    <% else %>
+      <%= link_to "Sign Up", new_user_path %>
+      <%= link_to "Log In", log_in_path %>
+    <% end %>
+
+
+
     <%= yield %>
     <hr>
     <p><%= link_to "home", '/' %>
