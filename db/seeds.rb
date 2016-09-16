@@ -17,11 +17,3 @@ category_list = [
 category_list.each do |name|
   Category.create(name: name)
 end
-
-photographer_list = [
-  ["Leah Nelson", "Portland, OR", "(206)715-7537", "leahcnels@gmail.com", 4],
-]
-
-photographer_list.each do |name, address, phone, email, category_id|
-  Photographer.create(name: name, address: address, phone: phone, email: email, category_ids:[category_id])
-end

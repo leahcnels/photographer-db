@@ -2,7 +2,6 @@
 
 <% if @users %>
   <% @users.each do |user| %>
-    <%= link_to user.name, user_path(user) %>
     <% if user.photographer %>
       <%= link_to user.name, user_path(user) %>
     <% end %>

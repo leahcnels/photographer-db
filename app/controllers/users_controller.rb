@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       redirect_to "/"
     else
       flash[:alert] = "There was a problem creating your account. Please try again."
-      redirect_to :back
+      redirect_back(fallback_location: root_path)
     end
   end
 
@@ -32,7 +32,7 @@ class UsersController < ApplicationController
       flash[:success] = "User updated!"
       redirect_to user_path(@user)
     else
-      flash[:alert] = "Save unsuccessful, please try again!"
+      flash[:alert] = "Save unsuccessful, please try again! Make sure you entered your password."
       render :edit
     end
   end
