@@ -1,9 +1,18 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/leahnelson/Desktop/photographer_db/spec/features/delete_image_pages_spec.rb": [
+      "/Users/leahnelson/Desktop/photographer_db/spec/features/add_posting_pages_spec.rb": [
         1,
         null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
         1,
         1,
         1,
@@ -301,11 +310,11 @@
       "/Users/leahnelson/Desktop/photographer_db/app/helpers/application_helper.rb": [
         1,
         1,
-        10,
-        3,
-        3,
+        15,
+        6,
+        4,
         2,
-        2,
+        3,
         null,
         null,
         null
@@ -352,14 +361,46 @@
         null,
         null
       ],
+      "/Users/leahnelson/Desktop/photographer_db/app/controllers/postings_controller.rb": [
+        1,
+        1,
+        4,
+        null,
+        1,
+        0,
+        null,
+        1,
+        2,
+        2,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        0,
+        0,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
       "/Users/leahnelson/Desktop/photographer_db/app/controllers/sessions_controller.rb": [
         1,
         1,
-        1,
-        1,
-        1,
-        1,
-        1,
+        4,
+        4,
+        4,
+        4,
+        4,
         null,
         0,
         0,
@@ -457,6 +498,13 @@
         1,
         null
       ],
+      "/Users/leahnelson/Desktop/photographer_db/app/models/posting.rb": [
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
       "/Users/leahnelson/Desktop/photographer_db/app/models/user.rb": [
         1,
         1,
@@ -469,16 +517,17 @@
         1,
         1,
         1,
+        1,
         null,
         1,
-        10,
-        10,
+        12,
+        12,
         null,
         null,
         1,
-        1,
-        1,
-        1,
+        4,
+        4,
+        4,
         null,
         null,
         null,
@@ -498,6 +547,11 @@
         1,
         1,
         null,
+        null,
+        1,
+        1,
+        1,
+        null,
         null
       ],
       "/Users/leahnelson/Desktop/photographer_db/config/routes.rb": [
@@ -511,6 +565,28 @@
         1,
         null,
         null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null
+      ],
+      "/Users/leahnelson/Desktop/photographer_db/spec/features/delete_image_pages_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
         1,
         1,
         null,
@@ -601,6 +677,18 @@
         null,
         null
       ],
+      "/Users/leahnelson/Desktop/photographer_db/spec/features/show_posting_pages_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
       "/Users/leahnelson/Desktop/photographer_db/spec/features/show_user_pages_spec.rb": [
         1,
         null,
@@ -652,6 +740,10 @@
         1,
         1,
         1,
+        1,
+        1,
+        1,
+        1,
         null,
         null
       ],
@@ -671,6 +763,15 @@
         2,
         null
       ],
+      "/Users/leahnelson/Desktop/photographer_db/spec/models/posting_spec.rb": [
+        1,
+        null,
+        1,
+        2,
+        2,
+        2,
+        null
+      ],
       "/Users/leahnelson/Desktop/photographer_db/spec/models/user_spec.rb": [
         1,
         null,
@@ -681,9 +782,10 @@
         2,
         2,
         2,
+        2,
         null
       ]
     },
-    "timestamp": 1474065176
+    "timestamp": 1474136510
   }
 }

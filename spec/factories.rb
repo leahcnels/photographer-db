@@ -10,4 +10,9 @@ FactoryGirl.define do
   factory :category do
     name 'Stuff'
   end
+
+  factory :posting do
+    title 'Hey'
+    body 'Blah blah blah'
+  end
 end

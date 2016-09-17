@@ -3,7 +3,16 @@
 <% if @users %>
   <% @users.each do |user| %>
     <% if user.photographer %>
-      <%= link_to user.name, user_path(user) %>
+      <%= link_to user_path(user) do %>
+        <% if user.images.any? %>
+          <%= image_tag user.images.first.img_file, class:"photographer-img-tile" %>
+        <% else %>
+          <%= image_tag 'camera.png', class:"photographer-img-tile" %>
+        <% end %>
+        <h4><%= user.name %></h4>
+      <% end %>
+    <% else %>
+      <p>no photographers yet</p>
     <% end %>
   <% end %>
 <% end %>

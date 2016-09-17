@@ -1,25 +1,44 @@
 <h3><%= @user.name %></h3>
 <h5><%= @user.address %></h5>
 <h5><%= @user.phone %> | <%= @user.email %></h5>
-<h4>Categories:</h4>
-<ul>
-  <% @user.categories.each do |category| %>
-    <li><%= link_to category.name, category_path(category) %></li>
-  <% end %>
-</ul>
 
-<h4>Images:</h4>
-<% if @user.images.any? %>
-  <% @user.images.each do |image| %>
-    <%= link_to user_image_path(@user, image) do %>
-      <%= image_tag image.img_file.url(:default) %>
+<% if @user.photographer %>
+  <h5><span class="glyphicon glyphicon-camera"></span>Photographer</h5>
+  <h4>Categories:</h4>
+  <ul>
+    <% @user.categories.each do |category| %>
+      <li><%= link_to category.name, category_path(category) %></li>
     <% end %>
+  </ul>
+
+  <h4>Images:</h4>
+  <% if @user.images.any? %>
+    <% @user.images.each do |image| %>
+      <%= link_to user_image_path(@user, image) do %>
+        <%= image_tag image.img_file.url(:default) %>
+      <% end %>
+    <% end %>
+  <% else %>
+    <p>no images for this photographer yet</p>
   <% end %>
-<% else %>
-  <p>no images for this photographer yet</p>
+  <% if session[:user_id] === @user.id %>
+    <p><%= link_to "upload photos", new_user_image_path(@user) %></p>
+  <% end %>
 <% end %>
 
-<p><%= link_to "upload photos", new_user_image_path(@user) %></p>
+<hr>
+
+<h4>Postings:</h4>
+<% if @user.postings.any? %>
+  <ul>
+    <% @user.postings.each do |posting| %>
+      <li><%= link_to posting.title, posting_path(posting) %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>no postings</p>
+<% end %>
+
 <hr>
 
 <% if session[:user_id] === @user.id %>

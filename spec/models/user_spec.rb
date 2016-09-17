@@ -7,4 +7,5 @@ describe User do
   it { should validate_presence_of :address }
   it { should have_and_belong_to_many :categories}
   it { should have_many :images }
+  it { should have_many :postings }
 end

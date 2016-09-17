@@ -3,7 +3,7 @@
   <%=f.text_field :name %>
   <br>
   <%=f.label :email %>
-  <%=f.text_field :email %>
+  <%=f.email_field :email %>
   <br>
   <%=f.label :password %>
   <%=f.password_field :password %>
@@ -15,7 +15,7 @@
   <%= f.text_field :address %>
   <br>
   <%= f.label :phone %>
-  <%= f.text_field :phone %>
+  <%= f.telephone_field :phone %>
   <hr>
   <%= f.label :photographer? %>
   <%= f.check_box :photographer, {}, "true", "false" do |b| %>
