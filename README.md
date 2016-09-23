@@ -14,7 +14,7 @@ Find and hire a local freelance photographer for your special event or simple he
 * View seeded list of categories and its photographers, and vice versa
 * Upload image from computer and assign to user.
 * View or delete images.
-* User can create a posting
+* Create, update, or delete a posting
 
 ## Future Objectives
 
