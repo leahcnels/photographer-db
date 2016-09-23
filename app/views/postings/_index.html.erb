@@ -1,5 +1,3 @@
-<h1>Postings</h1>
-<hr>
 <% if @postings %>
   <% @postings.each do |posting| %>
     <h4><%= link_to posting.title, posting_path(posting) %></h4>

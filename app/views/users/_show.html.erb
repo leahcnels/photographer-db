@@ -1,5 +1,8 @@
-<h3><%= @user.name %></h3> <% if @user.photographer %>
-  <span class="glyphicon glyphicon-camera"></span>Photographer<% end %>
+<h3><%= @user.name %></h3>
+<% if @user.photographer %>
+  <span class="glyphicon glyphicon-camera"></span>Photographer
+<% end %>
+<hr>
 <h5><%= @user.address %></h5>
 <h5><%= @user.phone %> | <a href="mailto:<%= @user.email %>"><%= @user.email %></a></h5>
 <hr>
@@ -40,10 +43,9 @@
 <% end %>
 
 <hr>
-
 <% if session[:user_id] === @user.id %>
-  <p><%= link_to "edit", edit_user_path(@user), id: "edit-user-link", remote: true %></p>
-  <p><%= link_to "delete", user_path(@user),
-                         :data => {:method => "delete"} %></p>
+  <%= link_to "edit", edit_user_path(@user), id: "edit-user-link", remote: true, class:"btn btn-primary" %>
+  <%= link_to "delete", user_path(@user),
+                         :data => {:method => "delete"}, class:"btn btn-danger" %>
 <% end %>
 <p><%= link_to "return to photographers", users_path %></p>

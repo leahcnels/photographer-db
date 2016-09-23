@@ -1,7 +1,9 @@
+<h1>Postings</h1>
+<hr>
 <div id="postings_show">
   <%= render "index" %>
 </div>
 <% if session[:user_id] %>
   <hr>
-  <%= link_to "New Posting", new_posting_path, id: "new_posting_link", remote: true %>
+  <%= link_to "New Posting", new_posting_path, id: "new_posting_link", remote: true, class:"btn btn-primary" %>
 <% end %>

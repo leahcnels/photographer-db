@@ -1,3 +1,4 @@
+<h5>Enter your password to make changes</h5>
 <%=form_for @user, remote: true do |f| %>
   <%=f.label :name %>
   <%=f.text_field :name %>
@@ -33,5 +34,5 @@
     </div>
   <%end%>
   <br>
-  <%=f.submit "Save" %>
+  <%=f.submit "Save", class: "btn btn-success" %>
 <%end%>
