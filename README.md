@@ -19,7 +19,6 @@ Find and hire a local freelance photographer for your special event or simple he
 ## Future Objectives
 
 * Users can comment on postings.
-* CRUD and specs for postings.
 * Users can review other users.
 * Utilize Google Maps API to geolocate user and populate map with nearby photographers.
 * Messaging system between users.
