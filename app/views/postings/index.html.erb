@@ -1,10 +1,5 @@
-<h1>Postings</h1>
-
-<% if @postings %>
-  <% @postings.each do |posting| %>
-    <%= link_to posting.title, posting_path(posting) %>
-  <% end %>
-<% end %>
-
+<div id="postings_show">
+  <%= render "index" %>
+</div>
 <hr>
-<%= link_to "New Posting", new_posting_path %>
+<%= link_to "New Posting", new_posting_path, id: "new_posting_link", remote: true %>

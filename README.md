@@ -28,6 +28,7 @@ Find and hire a local freelance photographer for your special event or simple he
 * HTML
 * Sass
 * Bootstrap
+* AJAX
 * Ruby
 * Rails
 

@@ -21,7 +21,6 @@
         <ul class="nav navbar-nav navbar-right">
           <% if session[:user_id] %>
             Logged in as: <%= User.find(session[:user_id]).email %> |
-            <%= link_to "Edit Profile", edit_user_path(User.find(session[:user_id])) %> |
             <%= link_to "View Profile", user_path(User.find(session[:user_id])) %> |
             <%= link_to "Log Out", log_out_path %>
           <% else %>
@@ -32,11 +31,9 @@
       </div>
     </nav>
 
-    <% flash.each do |key, value| %>
-      <div class="<%= flash_class(key) %>">
-          <%= value %>
-      </div>
-    <% end %>
+    <div id="flash">
+      <%= render 'layouts/flash' %>
+    </div>
 
     <div class="container">
       <%= yield %>
