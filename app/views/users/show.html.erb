@@ -1,6 +1,6 @@
 <h3><%= @user.name %></h3>
 <h5><%= @user.address %></h5>
-<h5><%= @user.phone %> | <%= @user.email %></h5>
+<h5><%= @user.phone %> | <a href="mailto:<%= @user.email %>"><%= @user.email %></a></h5>
 
 <% if @user.photographer %>
   <h5><span class="glyphicon glyphicon-camera"></span>Photographer</h5>

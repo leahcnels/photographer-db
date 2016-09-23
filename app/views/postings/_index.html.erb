@@ -2,6 +2,6 @@
 
 <% if @postings %>
   <% @postings.each do |posting| %>
-    <%= link_to posting.title, posting_path(posting) %>
+    <p><%= link_to posting.title, posting_path(posting) %></p>
   <% end %>
 <% end %>
