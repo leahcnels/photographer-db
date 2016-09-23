@@ -1,11 +1,8 @@
 <h3><%= @category.name %></h3>
-
+<hr>
 <% if @category.users.any? %>
-  <ul>
-    <% @category.users.each do |user| %>
-      <li><%= link_to user.name, user_path(user) %></li>
-    <% end %>
-  </ul>
+  <% @category.users.each do |user| %>
+    <h4><%= link_to user.name, user_path(user) %></h4>    <% end %>
 <% else %>
   <p>this category has no photographers yet</p>
 <% end %>

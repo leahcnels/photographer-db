@@ -1,7 +1,7 @@
 <div id="postings_show">
   <%= render "index" %>
 </div>
-<hr>
 <% if session[:user_id] %>
+  <hr>
   <%= link_to "New Posting", new_posting_path, id: "new_posting_link", remote: true %>
 <% end %>

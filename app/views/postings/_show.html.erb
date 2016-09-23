@@ -1,7 +1,7 @@
 <div class="posting-tile">
   <h3><%= @posting.title %></h3>
   <h4><%= @posting.created_at %></h4>
-  <h4><a href="mailto:<%= @posting.user.email %>"><%= @posting.user.name %></a></h4>
+  <h4><%= link_to @posting.user.name, user_path(@posting.user) %></h4>
   <br>
   <%= @posting.body %>
 </div>

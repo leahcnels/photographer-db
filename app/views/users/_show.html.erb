@@ -1,16 +1,16 @@
-<h3><%= @user.name %></h3>
+<h3><%= @user.name %></h3> <% if @user.photographer %>
+  <span class="glyphicon glyphicon-camera"></span>Photographer<% end %>
 <h5><%= @user.address %></h5>
 <h5><%= @user.phone %> | <a href="mailto:<%= @user.email %>"><%= @user.email %></a></h5>
-
-<% if @user.photographer %>
-  <h5><span class="glyphicon glyphicon-camera"></span>Photographer</h5>
+<hr>
+<% if @user.categories.any? %>
   <h4>Categories:</h4>
   <ul>
     <% @user.categories.each do |category| %>
       <li><%= link_to category.name, category_path(category) %></li>
     <% end %>
   </ul>
-
+  <hr>
   <h4>Images:</h4>
   <% if @user.images.any? %>
     <% @user.images.each do |image| %>
