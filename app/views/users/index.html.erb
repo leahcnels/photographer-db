@@ -1,15 +1,17 @@
 <h1>Hire A Photographer</h1>
-
+<hr>
 <% if @users %>
   <% @users.each do |user| %>
     <% if user.photographer %>
-      <%= link_to user_path(user) do %>
-        <% if user.images.any? %>
-          <%= image_tag user.images.first.img_file, class:"photographer-img-tile" %>
-        <% else %>
-          <%= image_tag 'camera.png', class:"photographer-img-tile" %>
-        <% end %>
-        <h4><%= user.name %></h4>
+      <div class="photographer-tile">
+        <%= link_to user_path(user) do %>
+          <h4><%= user.name %></h4>
+          <% if user.images.any? %>
+            <%= image_tag user.images.first.img_file %>
+          <% else %>
+            <%= image_tag 'camera.png' %>
+          <% end %>
+        </div>
       <% end %>
     <% end %>
   <% end %>

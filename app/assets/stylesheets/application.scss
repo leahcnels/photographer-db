@@ -32,6 +32,28 @@ body {
   padding-bottom: 15%;
 }
 
-.photographer-img-tile {
-  width: 256px;
+.photographer-tile {
+  display: inline-block;
+  margin-top: 0.5em;
+  margin-left: 0.5em;
+  h4 {
+    display: none;
+  }
+  img {
+    border: 2px solid grey;
+    width: 256px;
+  }
+}
+
+.photographer-tile:hover {
+  opacity: 0.5;
+  h4 {
+    padding-left: 0.5em;
+    color: black;
+    display: inline;
+    position: absolute;
+  }
+  a:hover {
+    text-decoration: none;
+  }
 }
