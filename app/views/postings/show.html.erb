@@ -1,9 +1,3 @@
-<div class="posting-tile">
-  <h3><%= @posting.title %></h3>
-  <h4><%= @posting.created_at %></h4>
-  <h4><a href="mailto:<%= @posting.user.email %>"><%= @posting.user.name %></a></h4>
-  <br>
-  <%= @posting.body %>
+<div id="posting_show">
+  <%= render "show" %>
 </div>
-<hr>
-<p><%= link_to "return to postings", postings_path %></p>

@@ -24,6 +24,10 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    if !(session[:user_id] === @user.id)
+      flash[:alert] = "Access Denied"
+      redirect_to user_path(@user)
+    end
   end
 
   def update
