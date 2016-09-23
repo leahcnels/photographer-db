@@ -30,10 +30,13 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update(user_params)
       flash[:success] = "User updated!"
-      redirect_to user_path(@user)
+      respond_to do |format|
+        format.html { redirect_to user_path(@user) }
+        format.js
+      end
     else
       flash[:alert] = "Save unsuccessful, please try again! Make sure you entered your password."
-      render :edit
+      redirect_to user_path(@user)
     end
   end
 
