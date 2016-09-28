@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe "the edit a user process" do
-  it "edits a user" do
+  it "edits a user", js: true do
     user = FactoryGirl.create(:user)
     visit log_in_path
     fill_in 'Email', :with => 'leahcnels@gmail.com'
@@ -16,7 +16,7 @@ describe "the edit a user process" do
     expect(page).to have_content 'Sally'
   end
 
-  it "gives error when no description is entered" do
+  it "gives error when no description is entered", js: true do
     user = FactoryGirl.create(:user)
     visit log_in_path
     fill_in 'Email', :with => 'leahcnels@gmail.com'

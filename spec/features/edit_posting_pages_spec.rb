@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe "the edit posting process" do
-  it "edits a posting" do
+  it "edits a posting", js: true do
     user = FactoryGirl.create(:user)
     posting = FactoryGirl.create(:posting, :user_id=>user.id)
     visit log_in_path
@@ -16,7 +16,7 @@ describe "the edit posting process" do
     expect(page).to have_content 'Making changes.'
   end
 
-  it "gives error when no title is entered" do
+  it "gives error when no title is entered", js: true do
       user = FactoryGirl.create(:user)
       posting = FactoryGirl.create(:posting, :user_id=>user.id)
       visit log_in_path
@@ -31,7 +31,7 @@ describe "the edit posting process" do
       expect(page).to have_content 'Update unsuccessful, please try again!'
     end
 
-  it "gives error when no body is entered" do
+  it "gives error when no body is entered", js: true do
     user = FactoryGirl.create(:user)
     posting = FactoryGirl.create(:posting, :user_id=>user.id)
     visit log_in_path

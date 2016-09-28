@@ -6,7 +6,7 @@ describe 'the add a posting process' do
     expect(page).to have_content 'You must be logged in to do that!'
   end
 
-  it 'adds a posting to the list of postings' do
+  it 'adds a posting to the list of postings', js: true do
     user = FactoryGirl.create(:user)
     visit log_in_path
     fill_in 'Email', :with => 'leahcnels@gmail.com'
@@ -20,7 +20,7 @@ describe 'the add a posting process' do
     expect(page).to have_content 'Yo'
   end
 
-  it 'gives an error if post does not save' do
+  it 'gives an error if post does not save', js: true do
     user = FactoryGirl.create(:user)
     visit log_in_path
     fill_in 'Email', :with => 'leahcnels@gmail.com'
