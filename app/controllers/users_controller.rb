@@ -39,13 +39,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update(user_params)
       flash[:success] = "User updated!"
-      respond_to do |format|
-        format.html { redirect_to user_path(@user) }
-        format.js
-      end
+      redirect_to user_path(@user)
     else
       flash[:alert] = "Save unsuccessful, please try again! Make sure you entered your password."
-      redirect_to user_path(@user)
+      render :edit
     end
   end
 
@@ -59,6 +56,6 @@ class UsersController < ApplicationController
 
 private
   def user_params
-    params.require(:user).permit(:name, :email, :phone, :address, :password, :photographer, :password_confirmation, category_ids:[])
+    params.require(:user).permit(:name, :email, :phone, :address, :latitude, :longitude, :password, :photographer, :password_confirmation, category_ids:[])
   end
 end

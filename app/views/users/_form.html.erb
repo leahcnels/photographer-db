@@ -1,5 +1,4 @@
-<h5>Enter your password to make changes</h5>
-<%=form_for @user, remote: true do |f| %>
+<%=form_for @user do |f| %>
   <%=f.label :name %>
   <%=f.text_field :name %>
   <br>
@@ -13,7 +12,7 @@
   <%=f.password_field :password_confirmation %>
   <hr>
   <%= f.label :address %>
-  <%= f.text_field :address %>
+  <%= f.text_field :address, id: 'geocomplete' %>
   <br>
   <%= f.label :phone %>
   <%= f.telephone_field :phone %>

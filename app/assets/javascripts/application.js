@@ -17,3 +17,8 @@
 //= require underscore
 //= require gmaps/google
 //= require_tree .
+//= require jquery.geocomplete
+
+$(function() {
+  $("#geocomplete").geocomplete();
+});
