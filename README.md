@@ -15,12 +15,12 @@ Find and hire a local freelance photographer for your special event or simple he
 * Upload image from computer and assign to user.
 * View or delete images.
 * Create, update, or delete a posting
+* View photographer's location using Google Maps
 
 ## Future Objectives
 
 * Users can comment on postings.
 * Users can review other users.
-* Utilize Google Maps API to geolocate user and populate map with nearby photographers.
 * Messaging system between users.
 
 ## Technologies Used
