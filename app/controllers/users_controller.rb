@@ -7,7 +7,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:notice] = "Welcome to the site!"
-      redirect_to '/log-in'
+      session[:user_id] = @user.id
+      redirect_to user_path(@user)
     else
       flash[:alert] = "There was a problem creating your account. Please try again."
       redirect_back(fallback_location: root_path)
@@ -41,7 +42,7 @@ class UsersController < ApplicationController
       flash[:success] = "User updated!"
       redirect_to user_path(@user)
     else
-      flash[:alert] = "Save unsuccessful, please try again! Make sure you entered your password."
+      flash[:alert] = "Save unsuccessful, please try again! Make sure your passwords match."
       render :edit
     end
   end
