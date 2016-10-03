@@ -14,6 +14,7 @@ class ConversationsController < ApplicationController
   end
 
   def show
+    @conversation.mark_as_read(@user)
   end
 
   def reply
@@ -40,6 +41,18 @@ class ConversationsController < ApplicationController
       conversation.receipts_for(@user).update_all(deleted: true)
     end
     flash[:success] = 'Trash emptied.'
+    redirect_to conversations_path
+  end
+
+  def mark_as_read
+    @conversation.mark_as_read(@user)
+    flash[:success] = 'Conversation marked as read.'
+    redirect_to conversations_path
+  end
+
+  def mark_as_unread
+    @conversation.mark_as_unread(@user)
+    flash[:success] = 'Conversation marked as unread.'
     redirect_to conversations_path
   end
 

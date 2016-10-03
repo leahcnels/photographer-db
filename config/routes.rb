@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   resources :messages, only: [:new, :create]
   resources :conversations, only: [:index, :show, :destroy] do
     member do
-      post :reply, :restore
+      post :reply, :restore, :mark_as_read, :mark_as_unread
     end
     collection do
       delete :empty_trash
