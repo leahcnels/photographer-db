@@ -12,6 +12,19 @@ class User < ActiveRecord::Base
   after_validation :geocode
   validates :phone, :presence => true
   validates :email, :presence => true, :uniqueness => true
+  acts_as_messageable
+
+  # def name
+  #
+  # end
+
+  def mailboxer_email(object)
+    #Check if an email should be sent for that object
+    #if true
+    return "define_email@on_your.model"
+    #if false
+    #return nil
+  end
 
   def encrypt_password
     self.password_salt = BCrypt::Engine.generate_salt

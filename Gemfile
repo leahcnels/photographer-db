@@ -16,6 +16,7 @@ gem "paperclip", "~> 5.0.0"
 gem 'gmaps4rails'
 gem 'underscore-rails'
 gem 'geocoder'
+gem 'mailboxer'
 
 group :development, :test do
   gem 'byebug', platform: :mri

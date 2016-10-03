@@ -1,0 +1,19 @@
+<h1><%= @conversation.subject %></h1>
+
+<% @conversation.participants.each do |participant| %>
+  <% unless participant == @user %>
+    <%= participant.name %>
+  <% end %>
+<% end %>
+
+<% @conversation.receipts_for(@user).each do |receipt| %>
+  <% message = receipt.message %>
+  <%= message.sender.name %>
+    says at <%= message.created_at.strftime("%-d %B %Y, %H:%M:%S") %>
+  <%= message.body %>
+<% end %>
+
+<p>
+  <%= @conversation.last_message.body %>
+  <%= @conversation.last_message.created_at.strftime("%-d %B %Y, %H:%M:%S") %>
+</p>
