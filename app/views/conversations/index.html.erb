@@ -2,8 +2,35 @@
 
 <%= link_to "New Message", new_message_path, class: 'btn btn-primary' %>
 
-<ul>
-  <% @conversations.each do |conversation| %>
-    <li><%= link_to conversation.subject, conversation_path(conversation) %></li>
+<div class="row">
+  <div class="col-sm-3">
+    <ul class="nav nav-pills nav-stacked">
+      <%= mailbox_section 'inbox', @box %>
+      <%= mailbox_section 'sent', @box %>
+      <%= mailbox_section 'trash', @box %>
+    </ul>
+  </div>
+
+  <div class="col-sm-9">
+    <ul>
+      <% @conversations.each do |conversation| %>
+        <li><%= link_to conversation.subject, conversation_path(conversation) %></li>
+        <div class="btn-group-vertical pull-right">
+          <% if conversation.is_trashed?(@user) %>
+            <%= link_to 'Restore', restore_conversation_path(conversation), class: 'btn btn-xs btn-info', method: :post %>
+          <% else %>
+            <%= link_to 'Move to trash', conversation_path(conversation), class: 'btn btn-xs btn-danger', method: :delete, data: {confirm: 'Are you sure?'} %>
+          <% end %>
+        </div>
+        <p><%= conversation.last_message.body %></p>
+        <p><%= conversation.last_message.created_at.strftime("%-d %B %Y, %H:%M:%S") %></p>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<div class="col-sm-9">
+  <% if @box == 'trash' %>
+    <p><%= link_to 'Empty trash', empty_trash_conversations_path, class: 'btn btn-danger', method: :delete, data: {confirm: 'Are you sure?'} %></p>
   <% end %>
-</ul>
+</div>
