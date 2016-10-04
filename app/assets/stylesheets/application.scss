@@ -57,3 +57,30 @@ body {
     text-decoration: none;
   }
 }
+
+nav {
+  padding-top: 5px;
+  background-color: #c1cdcd;
+  a {
+    color: white;
+  }
+}
+
+a {
+  color: grey;
+  &:hover {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.navbar-header {
+  font-size: 2em;
+  :hover {
+    text-decoration: none;
+  }
+}
+
+#photographer-icon {
+  color: grey;
+}

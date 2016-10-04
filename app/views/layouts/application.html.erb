@@ -2,7 +2,7 @@
 <html>
   <head>
     <%= favicon_link_tag '/favicon.ico' %>
-    <title>photographerdb</title>
+    <title>v i e w f i n d e r</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -17,9 +17,7 @@
     <nav class="navbar" role="navigation">
       <div class ='container'>
         <div class="navbar-header">
-          <%= link_to root_path do %>
-            <%= image_tag 'camera.png', class: 'navbar-brand' %>
-          <% end %>
+          <%= link_to "viewfinder", root_path  %>
         </div>
         <ul class="nav navbar-nav navbar-right">
           <% if session[:user_id] %>
