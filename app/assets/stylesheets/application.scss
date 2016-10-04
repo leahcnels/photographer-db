@@ -22,6 +22,7 @@ body {
 }
 
 #index-photo {
+  margin-top: 3em;
   img {
     width: 100%;
   }
@@ -60,6 +61,7 @@ body {
 
 nav {
   padding-top: 5px;
+  padding-bottom: 5px;
   background-color: #c1cdcd;
   a {
     color: white;
@@ -70,7 +72,7 @@ a {
   color: grey;
   &:hover {
     text-decoration: none;
-    color: black;
+    color: #003366;
   }
 }
 

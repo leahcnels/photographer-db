@@ -22,7 +22,7 @@
   });
 </script>
 
-<% if @user.categories.any? %>
+<% if @user.photographer && @user.categories.any? %>
   <hr>
   <h4>Categories:</h4>
   <ul>
@@ -32,7 +32,7 @@
   </ul>
 <% end %>
 
-<% if @user.images.any? %>
+<% if @user.photographer && @user.images.any? %>
   <hr>
   <h4>Images:</h4>
   <% @user.images.each do |image| %>

@@ -1,4 +1,6 @@
 <%= image_tag @image.img_file.url %>
 
+<% if session[:user_id] == @image.user_id %>
 <p><%= link_to "delete image", user_image_path(@image.user, @image),
                             :data => {:method => "delete"} %></p>
+<% end %>
