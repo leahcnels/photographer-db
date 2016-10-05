@@ -8,7 +8,7 @@
 
 <% @conversation.receipts_for(@user).each do |receipt| %>
   <p><% message = receipt.message %></p>
-  <p><%= message.sender.name %> says at <%= message.created_at.strftime("%-d %B %Y, %H:%M:%S") %></p>
+  <p><%= message.sender.name %> says at <%= message.created_at.strftime("%B %-d %Y, %H:%M:%S") %></p>
   <p><%= message.body %></p>
   <hr>
 <% end %>

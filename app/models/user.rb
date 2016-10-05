@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
   validates :phone, :presence => true
   validates :email, :presence => true, :uniqueness => true
   acts_as_messageable
+  before_destroy { messages.destroy_all }
 
   # def name
   #
