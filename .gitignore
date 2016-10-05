@@ -17,4 +17,4 @@
 .byebug_history
 
 # Ignore uploaded files
-/public/system
+/public/system/images/img_files/000/000/*
