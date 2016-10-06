@@ -13,6 +13,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'will_paginate', '~> 3.1.0'
 gem 'bcrypt-ruby', require: "bcrypt"
 gem "paperclip", "~> 5.0.0"
+gem 'aws-sdk', '~> 2.3'
 gem 'gmaps4rails'
 gem 'underscore-rails'
 gem 'geocoder'
