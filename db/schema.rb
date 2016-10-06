@@ -19,6 +19,13 @@ ActiveRecord::Schema.define(version: 20161003155507) do
     t.string "name"
   end
 
+  create_table "categories_photographers", id: false, force: :cascade do |t|
+    t.integer "category_id"
+    t.integer "photographer_id"
+    t.index ["category_id"], name: "index_categories_photographers_on_category_id", using: :btree
+    t.index ["photographer_id"], name: "index_categories_photographers_on_photographer_id", using: :btree
+  end
+
   create_table "categories_users", id: false, force: :cascade do |t|
     t.integer "category_id"
     t.integer "user_id"
@@ -85,6 +92,13 @@ ActiveRecord::Schema.define(version: 20161003155507) do
     t.string   "message_id"
     t.index ["notification_id"], name: "index_mailboxer_receipts_on_notification_id", using: :btree
     t.index ["receiver_id", "receiver_type"], name: "index_mailboxer_receipts_on_receiver_id_and_receiver_type", using: :btree
+  end
+
+  create_table "photographers", force: :cascade do |t|
+    t.string   "name"
+    t.string   "address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "postings", force: :cascade do |t|

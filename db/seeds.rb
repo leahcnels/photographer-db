@@ -11,7 +11,8 @@ category_list = [
   "Wedding",
   "Family",
   "School",
-  "Sports"
+  "Sports",
+  "Pets"
 ]
 
 category_list.each do |name|
