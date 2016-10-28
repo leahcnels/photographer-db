@@ -1,23 +1,24 @@
 <div class="posting-tile">
-  <h3><%= @posting.title %></h3>
-  <h4><%= @posting.created_at %></h4>
-  <h4><%= link_to @posting.user.name, user_path(@posting.user) %></h4>
+  <h4><%= @posting.title %></h4>
+  <h4><%= link_to @posting.user.name, user_path(@posting.user) %> <%= @posting.created_at.strftime("%b. %d %Y %l:%M%P") %></h4>
   <br>
   <%= @posting.body %>
 </div>
-<hr>
-<%= link_to 'Comment', new_posting_comment_path(@posting), id: "new-comment-link", class: 'btn btn-default btn-sm', remote: true %>
 <br>
-<div id="comments_show">
-<%= render 'comments/index' %>
-</div>
-<hr>
+<%= link_to 'Comment', new_posting_comment_path(@posting), id: "new-posting-comment-link", class: 'btn btn-default btn-sm' %>
+
 <% unless session[:user_id] == @posting.user_id %>
   <%= link_to 'Message user', new_message_path(to: @posting.user_id), class: 'btn btn-default btn-sm' %>
 <% end %>
+<hr>
+<div id="comments_show">
+  <ul>
+    <%= render partial:'comments/comment', collection:@posting.comments %>
+  </ul>
+</div>
+
 <% if session[:user_id] === @posting.user.id %>
-  <p><%= link_to "edit", edit_posting_path(@posting), id: "edit-posting-link", remote: true %></p>
-  <p><%= link_to "delete", posting_path(@posting),
+  <p><%= link_to "edit", edit_posting_path(@posting), id: "edit-posting-link", remote: true %> | <%= link_to "delete", posting_path(@posting),
                          :data => {:method => "delete"} %></p>
 <% end %>
 <p><%= link_to "return to postings", postings_path %></p>

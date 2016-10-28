@@ -16,6 +16,10 @@ Rails.application.routes.draw do
     resources :comments, :except => [:show]
   end
 
+  resources :comments do
+    resources :comments, :except => [:show]
+  end
+
   resources :messages, only: [:new, :create]
   resources :conversations, only: [:index, :show, :destroy] do
     member do

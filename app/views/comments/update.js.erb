@@ -1,4 +1,4 @@
-$('form').remove();
+$('#editform').remove();
 $('#edit-comment-link').show();
-$('#posting_show').html('<%= j render "postings/show" %>');
+$('#posting_show').html('<%= j render "postings/show", locals: {@posting => Posting.find(params[:id])} %>');
 $('#flash').html('<%= j render "layouts/flash" %>')

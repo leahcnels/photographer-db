@@ -1,0 +1,16 @@
+<li style:"text-decoration: none;">
+    <%= link_to comment.user.name, user_path(comment.user.id) %> - <%= comment.created_at.strftime("%b. %d %Y %l:%M%P") %>
+    <h5><%= comment.title %></h5>
+    <p><%= comment.body %></p>
+    <%= link_to "reply", new_comment_comment_path(comment) %>
+    <% if session[:user_id] === comment.user_id %>
+      <%= link_to "edit", edit_comment_path(comment), id: "edit-comment-link", remote: true %> | <%= link_to "delete", comment_path(comment),
+                             :data => {:method => "delete"} %></p>
+    <% end %>
+    <hr>
+    <% if comment.comments.any? %>
+      <ul>
+        <%= render partial:'comments/comment', collection:comment.comments %>
+      </ul>
+    <% end %>
+</li>
