@@ -12,7 +12,9 @@ Rails.application.routes.draw do
     resources :users, :only => [:index]
   end
 
-  resources :postings
+  resources :postings do
+    resources :comments, :except => [:show]
+  end
 
   resources :messages, only: [:new, :create]
   resources :conversations, only: [:index, :show, :destroy] do

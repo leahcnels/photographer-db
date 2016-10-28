@@ -1,0 +1,9 @@
+<h1>Comments</h1>
+<hr>
+<div id="comments_show">
+  <%= render "index" %>
+</div>
+<% if session[:user_id] %>
+  <hr>
+  <%= link_to "New Comment", new_posting_comment_path(@posting), id: "new_comment_link", remote: true, class:"btn btn-primary" %>
+<% end %>
