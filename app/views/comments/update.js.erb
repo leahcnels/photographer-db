@@ -1,4 +1,4 @@
 $('#editform').remove();
 $('#edit-comment-link').show();
-$('#comment-tile').html('<%= j render partial:"comments/comment", locals: {comment: @comment} %>');
+$('#<%= "comment-tile-#{@comment.id}"%>').html('<%= j render partial:"comments/comment", locals: {comment: @comment} %>');
 $('#flash').html('<%= j render "layouts/flash" %>')
