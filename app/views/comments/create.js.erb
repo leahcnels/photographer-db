@@ -1,4 +1,10 @@
 $('form').remove();
-$('#new-comment-link').show();
-$('#comments_show').html('<%= j render "index" %>');
+$('#new-posting-comment-link').show();
+$('#<%= "new-comment-comment-link-#{@commentable.id}"%>').show();
+<% if params[:posting_id] %>
+  $('#comments_show').html('<%= j render partial:"comments/comment", collection:@commentable.comments %>');
+<% else %>
+  // $('#comments_show').append('<%= j render partial:"comments/comment", locals: {comment: @comment} %>');
+  $('#<%= "comment-tile-#{@commentable.id}"%>').html("<%= j render partial:'comments/comment', locals: {comment: Comment.find(@comment.commentable_id)} %>");
+<% end %>
 $('#flash').html('<%= j render "layouts/flash" %>')

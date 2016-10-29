@@ -1,4 +1,4 @@
 $('#editform').remove();
 $('#edit-comment-link').show();
-$('#posting_show').html('<%= j render "postings/show", locals: {@posting => Posting.find(params[:id])} %>');
+$('#comment-tile').html('<%= j render partial:"comments/comment", locals: {comment: @comment} %>');
 $('#flash').html('<%= j render "layouts/flash" %>')

@@ -1,1 +1,5 @@
-$('#new-posting-comment-link').hide().after('<%= j render("form") %>')
+<% if params[:posting_id] %>
+  $('#new-posting-comment-link').hide().after('<%= j render partial:"form", locals: {commentable: Posting.find(params[:posting_id])} %>')
+<% else %>
+ $('#<%= "new-comment-comment-link-#{@commentable.id}"%>').hide().after('<%= j render partial:"form", locals: {commentable: @commentable} %>')
+<% end %>

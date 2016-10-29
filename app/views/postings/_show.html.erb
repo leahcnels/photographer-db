@@ -5,7 +5,7 @@
   <%= @posting.body %>
 </div>
 <br>
-<%= link_to 'Comment', new_posting_comment_path(@posting), id: "new-posting-comment-link", class: 'btn btn-default btn-sm' %>
+<%= link_to 'Comment', new_posting_comment_path(@posting), id: "new-posting-comment-link", class: 'btn btn-default btn-sm', remote: true %>
 
 <% unless session[:user_id] == @posting.user_id %>
   <%= link_to 'Message user', new_message_path(to: @posting.user_id), class: 'btn btn-default btn-sm' %>
@@ -13,7 +13,7 @@
 <hr>
 <div id="comments_show">
   <ul>
-    <%= render partial:'comments/comment', collection:@posting.comments %>
+    <%= render partial:'comments/comment', collection:@posting.comments(:order => "created_at ASC") %>
   </ul>
 </div>
 
