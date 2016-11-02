@@ -1,2 +1,1 @@
-<% "edit-comment-link-#{@comment.id}" %>
 $('#<%= "edit-comment-link-#{@comment.id}" %>').hide().after('<%= j render partial:"editform", locals: {comment: @comment} %>')

@@ -85,6 +85,10 @@ a {
   }
 }
 
+.navbar-right {
+  padding-top: 1%;
+}
+
 #photographer-icon {
   font-size: 1.5em;
   color: grey;
@@ -92,4 +96,8 @@ a {
 
 .show-image {
   max-width: 1000px;
+}
+
+li {
+  list-style-type: none;
 }

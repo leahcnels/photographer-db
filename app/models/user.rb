@@ -5,13 +5,16 @@ class User < ActiveRecord::Base
   has_many :images, dependent: :destroy
   has_many :postings, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :ratings, dependent: :destroy
   has_and_belongs_to_many :categories
   validates :name, :presence => true
+  validates_format_of :name, :with => /[a-z]/
   validates :password, :presence => true
   validates :address, :presence => true
   geocoded_by :address
   after_validation :geocode
   validates :phone, :presence => true
+  validates_format_of :phone, :with => /[0-9]/
   validates :email, :presence => true, :uniqueness => true
   acts_as_messageable
   before_destroy { messages.destroy_all }

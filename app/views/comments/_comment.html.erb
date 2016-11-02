@@ -1,19 +1,29 @@
 <div id ="comment-tile-<%= comment.id %>">
   <li>
-      <%= link_to comment.user.name, user_path(comment.user.id) %> - <%= comment.created_at.strftime("%b. %d %Y %l:%M%P") %>
-      <h5><%= comment.title %></h5>
-      <p><%= comment.body %></p>
-      <%= link_to "reply", new_comment_comment_path(comment), id: "new-comment-comment-link-#{comment.id}", remote: true %>
+    <p>
+      <%= link_to comment.user.name, user_path(comment.user.id) %>
+      <%= comment.created_at.strftime("%b. %d %Y, %l:%M%P") %>
+
       <% if session[:user_id] === comment.user_id %>
-        <br>
-        <%= link_to "edit", edit_comment_path(comment), id: "edit-comment-link-#{comment.id}", remote: true %> | <%= link_to "delete", comment_path(comment),
-                               :data => {:method => "delete"} %></p>
+        <%= link_to edit_comment_path(comment), id: "edit-comment-link-#{comment.id}", remote: true do %>
+          <span class='glyphicon glyphicon-pencil'></span>
+        <% end %>
+        <%= link_to comment_path(comment), :data => {:method => "delete"} do %>
+          <span class='glyphicon glyphicon-trash'></span>
+        <% end %>
       <% end %>
-      <hr>
-      <% if comment.comments.any? %>
-        <ul>
-          <%= render partial:'comments/comment', collection:comment.comments(:order => "created_at ASC") %>
-        </ul>
-      <% end %>
+    </p>
+
+    <p><%= comment.body %></p>
+
+    <% if session[:user_id] %>
+      <%= link_to "reply", new_comment_comment_path(comment), id: "new-comment-comment-link-#{comment.id}", remote: true %>
+    <% end %>
+    <hr>
+    <% if comment.comments.any? %>
+      <ul>
+        <%= render partial:'comments/comment', collection:comment.comments %>
+      </ul>
+    <% end %>
   </li>
 </div>

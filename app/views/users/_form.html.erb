@@ -21,7 +21,7 @@
   <%= f.text_field :address, id: 'geocomplete' %>
   <br>
   <%= f.label :phone %>
-  <%= f.telephone_field :phone %>
+  <%= f.telephone_field :phone, minlength: '10', maxlength: '10', placeholder: '1234567890' %>
   <hr>
   <%= f.label :photographer? %>
   <%= f.check_box :photographer, {}, "true", "false" do |b| %>
@@ -39,5 +39,5 @@
     </div>
   <%end%>
   <br>
-  <%=f.submit "Save", class: "btn btn-success" %>
+  <%=f.submit "Save", class: 'btn btn-default btn-sm' %>
 <%end%>

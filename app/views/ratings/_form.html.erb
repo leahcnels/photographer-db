@@ -1,0 +1,9 @@
+<%= form_for [@user, Rating.new] do |f| %>
+  <%=f.label :stars %>
+  <%=f.select :stars, ['1', '2', '3', '4', '5'], :prompt => 'Select One' %>
+  <br>
+  <%=f.label :feedback %>
+  <%=f.text_area :feedback %>
+  <br>
+  <%= f.submit class:'btn btn-default btn-sm' %>
+<% end %>

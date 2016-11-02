@@ -1,8 +1,5 @@
 class CommentsController < ApplicationController
   before_action :find_commentable
-  def index
-
-  end
 
   def new
     @comment = Comment.new
@@ -58,7 +55,7 @@ class CommentsController < ApplicationController
 
 private
   def comment_params
-    params.require(:comment).permit(:title, :body)
+    params.require(:comment).permit(:body)
   end
   def find_commentable
     @commentable = Comment.find(params[:comment_id]) if params[:comment_id]

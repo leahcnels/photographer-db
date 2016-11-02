@@ -38,13 +38,14 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user.update(user_params)
-      flash[:success] = "User updated!"
-      redirect_to user_path(@user)
-    else
-      flash[:alert] = "Save unsuccessful, please try again! Make sure your passwords match."
-      render :edit
-    end
+      if @user.update(user_params)
+        flash[:success] = "User updated!"
+        redirect_to user_path(@user)
+      else
+        flash[:alert] = "Save unsuccessful, please try again! Make sure your passwords match."
+        render :edit
+      end
+
   end
 
   def destroy

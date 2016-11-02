@@ -1,5 +1,11 @@
 <% if @postings %>
   <% @postings.each do |posting| %>
-    <h4><%= link_to posting.title, posting_path(posting) %></h4>
+    <%= link_to posting_path(posting) do %>
+      <h3><%= posting.title %></h3>
+    <% end %>
+    <h5>
+      <%= link_to posting.user.name, user_path(posting.user) %>
+      <%= posting.created_at.strftime("%b. %d %Y, %l:%M%P") %>
+    </h5>
   <% end %>
 <% end %>
