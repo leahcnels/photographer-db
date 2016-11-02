@@ -1,0 +1,6 @@
+<h3>Images:</h3>
+<% @user.images.each do |image| %>
+  <%= link_to user_image_path(@user, image) do %>
+    <%= image_tag image.img_file.url(:default) %>
+  <% end %>
+<% end %>

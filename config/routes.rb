@@ -6,7 +6,10 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :images
-    resources :ratings
+  end
+
+  resources :users do
+    resources :ratings, only: [:new, :create, :destroy]
   end
 
   resources :categories do

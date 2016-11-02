@@ -1,6 +1,7 @@
 class RatingsController < ApplicationController
   def new
     @user = User.find(params[:user_id])
+    @rating = Rating.new
     if !session[:user_id]
       flash[:alert] = "You must be logged in to do that!"
       redirect_to log_in_path
@@ -17,25 +18,6 @@ class RatingsController < ApplicationController
     else
       flash[:alert] = "Save unsuccessful, please try again!"
       redirect_to new_user_rating_path(@user)
-    end
-  end
-
-  def edit
-    @rating = Rating.find(params[:id])
-    if !(session[:user_id] === @rating.author_id)
-      flash[:alert] = "You do not have permission to edit this post."
-      redirect_to user_path(@rating.user_id)
-    end
-  end
-
-  def update
-    @rating = Rating.find(params[:id])
-    if @rating.update(rating_params)
-      flash[:success] = "Rating updated!"
-      redirect_to user_path(@rating.user_id)
-    else
-      flash[:alert] = "Update unsuccessful, please try again!"
-      redirect_to edit_user_rating_path(@rating.user_id, @rating)
     end
   end
 

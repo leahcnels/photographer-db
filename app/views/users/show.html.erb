@@ -17,14 +17,7 @@
     <% end %>
     <hr>
     <% if @user.postings.any? %>
-      <h3>Postings:</h3>
-      <ul>
-        <% @user.postings.each do |posting| %>
-          <li><%= link_to posting.title, posting_path(posting) %></li>
-        <% end %>
-      </ul>
-    <% else %>
-      <p>no postings</p>
+      <%= render 'postings' %>
     <% end %>
   </div>
 </div>
@@ -39,48 +32,30 @@
   });
 </script>
 
-<% if @user.photographer && @user.categories.any? %>
-  <hr>
-  <h3>Categories:</h3>
-  <ul>
-    <% @user.categories.each do |category| %>
-      <li><%= link_to category.name, category_path(category) %></li>
-    <% end %>
-  </ul>
-<% end %>
-
-<% if @user.photographer && @user.images.any? %>
-  <hr>
-  <h3>Images:</h3>
-  <% @user.images.each do |image| %>
-    <%= link_to user_image_path(@user, image) do %>
-      <%= image_tag image.img_file.url(:default) %>
-    <% end %>
-  <% end %>
-<% end %>
-
-<% if @user.photographer && session[:user_id] === @user.id %>
-  <hr>
-  <p><%= link_to "upload photos", new_user_image_path(@user), class:'btn btn-default btn-sm' %></p>
-<% end %>
-
 <% if @user.photographer %>
-  <hr>
+  <% if @user.categories.any? %>
+    <hr>
+    <%= render 'categories' %>
+  <% end %>
+
+  <% if @user.images.any? %>
+    <hr>
+    <%= render 'images' %>
+  <% end %>
+
+  <% if session[:user_id] === @user.id %>
+    <hr>
+    <p><%= link_to "upload photos", new_user_image_path(@user), class:'btn btn-default btn-sm' %></p>
+  <% end %>
+
   <% unless session[:user_id] === @user.id %>
+    <hr>
     <%= link_to "rate photographer", new_user_rating_path(@user), class:'btn btn-default btn-sm' %>
   <% end %>
 
   <% if @user.ratings.any? %>
-    <h3>Ratings</h3>
-    <ul>
-    <% @user.ratings.each do |rating| %>
-      <li>
-        <%= link_to User.find(rating.author_id).name, user_path(rating.author_id) %>
-        <%= rating.stars %>
-        <%= rating.feedback %>
-      </li>
-    <% end %>
-  </ul>
+    <hr>
+    <%= render 'ratings' %>
   <% end %>
 <% end %>
 

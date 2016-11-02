@@ -1,4 +1,4 @@
-<%= form_for [@user, Rating.new] do |f| %>
+<%= form_for [@user, @rating] do |f| %>
   <%=f.label :stars %>
   <%=f.select :stars, ['1', '2', '3', '4', '5'], :prompt => 'Select One' %>
   <br>

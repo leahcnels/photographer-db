@@ -1,0 +1,6 @@
+<h3>Postings:</h3>
+<ul>
+  <% @user.postings.each do |posting| %>
+    <li><%= link_to posting.title, posting_path(posting) %></li>
+  <% end %>
+</ul>

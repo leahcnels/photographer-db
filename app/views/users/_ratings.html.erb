@@ -1,0 +1,18 @@
+<h3>Ratings</h3>
+<ul>
+  <% @user.ratings.each do |rating| %>
+    <li>
+      <%= link_to User.find(rating.author_id).name, user_path(rating.author_id) %>
+      <p><%= rating.created_at.strftime("%b. %d %Y, %l:%M%P") %></p>
+      <% rating.stars.times do %>
+        <span class="glyphicon glyphicon-star"></span>
+      <% end %>
+      <p><%= rating.feedback %></p>
+      <% if session[:user_id] === rating.author_id %>
+        <%= link_to user_rating_path(@user, rating), :data => {:method => "delete"} do %>
+          <span class='glyphicon glyphicon-trash'></span>
+        <% end %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
