@@ -17,11 +17,11 @@ Find and hire a local freelance photographer for your special event or simple he
 * Create, update, or delete a posting
 * View photographer's location using Google Maps
 * Messaging between users
-
-## Future Objectives
-
 * Users can comment on postings.
 * Users can review other users.
+
+## Future Objectives
+* Users can schedule appointments with photographers.
 
 ## Technologies Used
 * HTML
