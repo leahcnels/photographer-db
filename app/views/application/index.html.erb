@@ -1,13 +1,26 @@
-<div class="row">
-  <div class="col-xs-9" id="index-photo">
-    <%= image_tag "index-photo.jpg" %>
-  </div>
-  <div class="col-xs-3 pull-right" id="index-rightbar">
+<div id="index-photo">
+  <div id="index-rightbar">
     <h1>viewfinder</h1>
     <h3>hire a photographer</h3>
+
+    <%= link_to users_path do %>
+      <span class="glyphicon glyphicon-camera index-glyph"></span>
+    <% end %>
+    <%= link_to categories_path do %>
+      <span class="glyphicon glyphicon-th index-glyph"></span>
+    <% end %>
+    <%= link_to postings_path do %>
+      <span class="glyphicon glyphicon-comment index-glyph"></span>
+    <% end %>
     <hr>
-    <p><%= link_to "photographers", users_path %></p>
-    <p><%= link_to "categories", categories_path %></p>
-    <p><%= link_to "postings", postings_path %></p>
+    <% if session[:user_id] %>
+      <p id="signedinas">Signed in as <%= User.find(session[:user_id]).email %></p>
+      <%= link_to "View Your Profile", user_path(session[:user_id]), class:"btn btn-default signinupbtn" %>
+      <%= link_to "Log Out", log_out_path, class:"btn btn-default signinupbtn" %>
+      <% else %>
+        <%= link_to "Sign Up", new_user_path, class:"btn btn-default signinupbtn" %>
+        <%= link_to "Log In", log_in_path, class:"btn btn-default signinupbtn" %>
+      <% end %>
+
   </div>
 </div>

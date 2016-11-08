@@ -1,6 +1,6 @@
 <%= form_for [@user, @rating] do |f| %>
-  <%=f.label :stars %>
-  <%=f.select :stars, ['1', '2', '3', '4', '5'], :prompt => 'Select One' %>
+<%= f.radio_button :stars, '1' %>
+<%= f.radio_button :stars, '2' %>
   <br>
   <%=f.label :feedback %>
   <%=f.text_area :feedback %>
