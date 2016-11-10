@@ -1,9 +1,14 @@
+<h1>New Rating for <%= @user.name %> </h1>
 <%= form_for [@user, @rating] do |f| %>
-<%= f.radio_button :stars, '1' %>
-<%= f.radio_button :stars, '2' %>
+  <%=f.label :rating %>
+  <%= f.radio_button :stars, '1' %>
+  <%= f.radio_button :stars, '2' %>
+  <%= f.radio_button :stars, '3' %>
+  <%= f.radio_button :stars, '4' %>
+  <%= f.radio_button :stars, '5' %>
   <br>
   <%=f.label :feedback %>
   <%=f.text_area :feedback %>
   <br>
-  <%= f.submit class:'btn btn-default btn-sm' %>
+  <%= f.submit 'submit rating', class:'btn btn-default btn-sm' %>
 <% end %>
