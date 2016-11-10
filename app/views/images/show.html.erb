@@ -1,3 +1,5 @@
+<h1><%= @image.user.name %>'s image</h1>
+<br>
 <%= image_tag @image.img_file.url, class:"show-image" %>
 
 <p><%= link_to "back", user_path(@image.user) %></p>
