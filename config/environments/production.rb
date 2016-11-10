@@ -86,7 +86,9 @@ Rails.application.configure do
 
   config.paperclip_defaults = {
     storage: :s3,
-    :s3_host_name => 's3-us-west-2.amazonaws.com',
+    :url => ':s3_alias_url',
+    :s3_host_alias => 'd3s059iakl3pjo.cloudfront.net',
+    :path => '/:class/:attachment/:id_partition/:style/:filename',
     :s3_protocol => :https,
     s3_credentials: {
       bucket: ENV.fetch('S3_BUCKET_NAME'),
