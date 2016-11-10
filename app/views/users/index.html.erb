@@ -6,7 +6,7 @@
       <%= link_to user_path(user) do %>
         <h4><%= user.name %></h4>
         <% if user.images.any? %>
-          <%= image_tag user.images.first.img_file %>
+          <%= image_tag user.images.first.img_file(:default) %>
         <% else %>
           <%= image_tag 'camera.png', class:"index-camera" %>
         <% end %>
