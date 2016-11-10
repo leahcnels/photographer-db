@@ -2,5 +2,5 @@
 
 <%= form_for [@user, @image], url: user_images_path(@user) do |form| %>
   <%= form.file_field :img_file %>
-  <%= form.submit %>
+  <%= form.submit class:'btn btn-default btn-sm' %>
 <% end %>

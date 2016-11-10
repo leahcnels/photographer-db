@@ -1,6 +1,7 @@
 <%= image_tag @image.img_file.url, class:"show-image" %>
 
+<p><%= link_to "back", user_path(@image.user) %></p>
 <% if session[:user_id] == @image.user_id %>
 <p><%= link_to "delete image", user_image_path(@image.user, @image),
-                            :data => {:method => "delete"} %></p>
+                            :data => {:method => "delete"}, class:'btn btn-default btn-sm' %></p>
 <% end %>
